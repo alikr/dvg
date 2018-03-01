@@ -2,11 +2,9 @@
  * @author alikr
  */
 
-const path = require('path')
-const webpack = require('webpack')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const CopyWebpackPlugin = require('copy-webpack-plugin')
-
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 function resolve(dir) {
   return path.join(__dirname, '..', dir)
@@ -109,8 +107,8 @@ module.exports = function(prod){
     resolve: {
       extensions: ['.js', '.es6', '.vue', '.html'],
       alias: {
-        'vag':resolve('src/index.js'),
-        // 'vag':resolve('dist/vag.js'), // 测试编译文件
+        'dvg':resolve('src/index.js'),
+        // 'dvg':resolve('dist/dvg.js'), // 测试编译文件
       }
     }
   }

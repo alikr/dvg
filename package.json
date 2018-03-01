@@ -1,8 +1,8 @@
 {
-  "name": "vag",
+  "name": "dvg",
   "version": "0.0.1",
-  "description": "Visualization and Graph",
-  "main": "dist/vag.js",
+  "description": "Data Visualization and Graph",
+  "main": "dist/dvg.js",
   "author": "alikr",
   "license": "MIT",
   "keywords": [
@@ -14,15 +14,17 @@
     "components"
   ],
   "files": [
-    "dist/*.js"
+    "dist",
+    "examples"
   ],
   "scripts": {
     "start": "node build/webpack.dev.js",
-    "build": "rollup -c build/rollup.config.js",
-    "build:min": "webpack --config build/webpack.build.js --progress --colors",
-    "server": "node build/server.js"
+    "build": "node build/build.js",
+    "publish": "npm run build && npm publish"
   },
   "dependencies": {
+    "uglify-js": "^3.3.12",
+    "zlib": "^1.0.5"
   },
   "devDependencies": {
     "babel-core": "^6.21.0",
@@ -73,5 +75,9 @@
     "webpack": "2.2.1",
     "webpack-dev-server": "^2.4.5",
     "webpack-merge": "^3.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alikr/dvg.git"
   }
 }

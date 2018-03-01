@@ -1,8 +1,16 @@
-import resolve from 'rollup-plugin-node-resolve';
-import babel from 'rollup-plugin-babel';
-import vue from 'rollup-plugin-vue';
-import commonjs from 'rollup-plugin-commonjs';
-module.exports={
+const resolve = require('rollup-plugin-node-resolve');
+const babel = require('rollup-plugin-babel');
+const vue = require('rollup-plugin-vue');
+const commonjs = require('rollup-plugin-commonjs');
+const version = require('../package.json').version;
+const banner =
+  '/*!\n' +
+  ' * Vag.js v' + version + '\n' +
+  ' * (c) 2017-' + new Date().getFullYear() + ' alikr\n' +
+  ' * Released under the MIT License.\n' +
+  ' */'
+module.exports = {
+	version: version,
 	input: 'src/index.js',
 	plugins: [
 		vue(),
@@ -17,8 +25,9 @@ module.exports={
 		commonjs(),
 	],
 	output: {
-		name:'vag',
+		name:'dvg',
+		banner: banner,
 		format: 'cjs',//cjs,amd,es,iife,umd
-		file: 'dist/vag.js'
-	}
-}; 
+		file: 'dist/dvg.js'
+	},
+}
